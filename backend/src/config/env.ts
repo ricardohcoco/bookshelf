@@ -18,7 +18,10 @@ export const env = {
     dbUser: getEnv("DB_USER"),
     dbPassword: getEnv("DB_PASSWORD"),
     dbName: getEnv("DB_NAME"),
+    dbSsl: process.env.DB_SSL === "true",
+    dbSslCa: process.env.DB_SSL_CA,
     frontendUrl: getEnv("FRONTEND_URL"),
 
     jwtSecret: getEnv("JWT_SECRET"),
+
 };
