@@ -1,0 +1,77 @@
+﻿
+.form {
+  display: grid;
+  grid-template-columns: 1.2fr 1fr auto;
+  align-items: end;
+  gap: 20px;
+  padding: 28px 32px 32px;
+  border: 1px solid #ded8ca;
+  border-radius: 12px;
+  background: #fffcf6;
+  box-shadow: 0 8px 28px #283c3206;
+}
+.form h2 {
+  grid-column: 1 / -1;
+  margin-bottom: 4px;
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: 1.5rem;
+  font-weight: 400;
+  letter-spacing: -0.4px;
+}
+.field { display: flex; flex-direction: column; gap: 8px; min-width: 0; }
+.field label { color: #596551; font-size: 0.8rem; font-weight: 600; letter-spacing: 0.6px; }
+.input {
+  width: 100%;
+  min-height: 48px;
+  padding: 12px 14px;
+  border: 1px solid #d5d3c7;
+  border-radius: 8px;
+  background: #f8f6ef;
+  color: #283c32;
+  font: inherit;
+  font-size: 1rem;
+  transition: border-color 160ms, background 160ms;
+}
+.input::placeholder { color: #76776c; }
+.input:hover:not(:disabled) { border-color: #99a28e; }
+.input:focus { border-color: #355546; background: #fffefa; }
+.input:focus-visible { outline: 3px solid #35554640; outline-offset: 2px; }
+.actions { display: flex; flex-wrap: wrap; gap: 10px; }
+.actions button {
+  min-height: 48px;
+  padding: 12px 18px;
+  border: 1px solid #c4c9ba;
+  border-radius: 8px;
+  background: #fffcf6;
+  color: #355546;
+  font: inherit;
+  font-size: 0.875rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 160ms, transform 160ms;
+}
+.actions button:hover:not(:disabled) { background: #e9eddf; }
+.actions .submitButton { border-color: #355546; background: #355546; color: #fffdf7; }
+.actions .submitButton:hover:not(:disabled) { background: #243e32; transform: translateY(-1px); }
+.actions button:focus-visible { outline: 3px solid #a4783d; outline-offset: 4px; }
+.actions button:disabled, .input:disabled { opacity: 0.6; cursor: not-allowed; }
+.error {
+  grid-column: 1 / -1;
+  padding: 12px 14px;
+  border-radius: 8px;
+  background: #fcf0e9;
+  color: #923e2f;
+  font-size: 0.875rem;
+}
+@media (max-width: 960px) {
+  .form { grid-template-columns: 1fr 1fr; }
+  .actions { grid-column: 1 / -1; }
+}
+@media (max-width: 600px) {
+  .form { grid-template-columns: 1fr; padding: 24px 20px; gap: 16px; }
+  .actions button { flex: 1; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .input, .actions button { transition: none; }
+}
+

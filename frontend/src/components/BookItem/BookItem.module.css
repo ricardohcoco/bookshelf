@@ -1,0 +1,84 @@
+﻿
+.card {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+  padding: 28px 24px 24px 30px;
+  border: 1px solid #ded8ca;
+  border-left: 6px solid #355546;
+  border-radius: 4px 12px 12px 4px;
+  background: linear-gradient(90deg, #ece8dc 0, #fffcf6 16px);
+  box-shadow: 0 4px 16px #283c3207;
+  overflow-wrap: anywhere;
+  transition: transform 180ms, box-shadow 180ms;
+}
+.card:nth-child(3n + 2) { border-left-color: #9a703b; }
+.card:nth-child(3n) { border-left-color: #827059; }
+.card:hover { transform: translateY(-3px); box-shadow: 0 12px 28px #283c3210; }
+.title {
+  padding-right: 12px;
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: 1.5rem;
+  font-weight: 400;
+  line-height: 1.35;
+  letter-spacing: -0.35px;
+}
+.author { margin-top: 10px; color: #686d61; font-size: 0.9rem; }
+.status {
+  align-self: flex-start;
+  margin: 24px 0;
+  padding: 4px 12px;
+  border: 1px solid #d6dccb;
+  border-radius: 100px;
+  background: #edf0e6;
+  color: #405639;
+  font-size: 0.75rem;
+  font-weight: 600;
+}
+.actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-top: auto;
+  padding-top: 18px;
+  border-top: 1px solid #e5e0d5;
+}
+.actions button {
+  min-height: 44px;
+  padding: 9px 12px;
+  border: 1px solid #d5d3c7;
+  border-radius: 6px;
+  background: transparent;
+  color: #355546;
+  font: inherit;
+  font-size: 0.8rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 160ms, border-color 160ms;
+}
+.statusSelect {
+  width: 100%;
+  min-height: 44px;
+  padding: 9px 12px;
+  border: 1px solid #c7d1bd;
+  border-radius: 6px;
+  background: #f0f3e9;
+  color: #355546;
+  font: inherit;
+  font-size: 0.8rem;
+  cursor: pointer;
+}
+.statusSelect:disabled { opacity: 0.6; cursor: not-allowed; }
+.statusSelect:focus-visible { outline: 3px solid #a4783d; outline-offset: 4px; }
+.actions button:first-child { flex-basis: 100%; border-color: #c7d1bd; background: #f0f3e9; }
+.actions button:hover:not(:disabled) { border-color: #99a28e; background: #e9eddf; }
+.actions .deleteButton { margin-left: auto; border-color: transparent; color: #923e2f; }
+.actions .deleteButton:hover:not(:disabled) { border-color: #e7c8ba; background: #fcf0e9; }
+.actions button:disabled { opacity: 0.6; cursor: not-allowed; }
+.actions button:focus-visible { outline: 3px solid #a4783d; outline-offset: 4px; }
+@media (prefers-reduced-motion: reduce) {
+  .card, .actions button { transition: none; }
+  .card:hover { transform: none; }
+}
+

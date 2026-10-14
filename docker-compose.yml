@@ -1,0 +1,15 @@
+services:
+  database:
+    image: mysql:8.0
+    container_name: bookshelf-database
+    ports:
+    - "3306:3306"
+    environment:
+      MYSQL_ROOT_PASSWORD: ${MYSQL_ROOT_PASSWORD}
+      MYSQL_DATABASE: bookshelf
+    volumes: 
+      - bookshelf_data:/var/lib/mysql
+
+
+volumes:
+  bookshelf_data:
